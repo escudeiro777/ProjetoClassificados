@@ -81,6 +81,18 @@ CREATE TABLE produto
 );
 GO
 
+-- DENUNCIA
+CREATE TABLE denuncia
+(
+	idDenuncia INT PRIMARY KEY IDENTITY,
+	idProduto INT FOREIGN KEY REFERENCES produto(idProduto),
+	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario),
+	dataDenuncia DATETIME NOT NULL,
+	descricao VARCHAR(300) NOT NULL,
+	titulo VARCHAR(50) NOT NULL
+);
+GO
+
 
 
 
