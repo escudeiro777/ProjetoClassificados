@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #B5B5B5;
+}
+
+.home__banner {
+    height: 500px;
+    background-image: linear-gradient(rgba(2, 0, 3, 0.5), rgba(2, 0, 3, 0.5)), url(../img/bannerHome.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Bebas Neue', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home__banner p {
+    width: 250px;
+    font-size: 75px;
+    margin-left: 10vw;
+}
+
+.banner__btn {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(153,153,153,1) 100%);
+    width: 250px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border-style: none;
+    margin-right: 10vw;
+    font-family: 'Michroma', sans-serif;
+}
+
+.btn__img {
+    width: 35px;
+    height: fit-content;
+}

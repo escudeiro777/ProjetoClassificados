@@ -1,0 +1,26 @@
+header {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(5, 64, 178, 1) 0%, rgba(111, 160, 255, 1) 16%, rgba(108, 155, 248, 1) 35%, rgba(20, 26, 72, 1) 77%, rgba(2, 0, 36, 1) 100%);
+}
+
+.header__logo {
+    width: 150px;
+}
+
+.header__conteudo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__busca {
+    display: flex;
+    justify-content: center;
+    background-color: #B5B5B5;
+    
+}
+
+.header__marcas{
+    width: 60px;
+    height: 60px;
+}
