@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj": {}
+    "C:\\Users\\33848821800\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj": {}
   },
   "projects": {
-    "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj": {
+    "C:\\Users\\33848821800\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
+        "projectUniqueName": "C:\\Users\\33848821800\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
         "projectName": "ProjetoClassificados",
-        "projectPath": "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
-        "packagesPath": "C:\\Users\\Werther\\.nuget\\packages\\",
-        "outputPath": "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\obj\\",
+        "projectPath": "C:\\Users\\33848821800\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
+        "packagesPath": "C:\\Users\\33848821800\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\33848821800\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Werther\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\33848821800\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
