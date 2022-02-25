@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\39220866838.INFOSCS\\Documents\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\39220866838.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\33848821800\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\33848821800\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\33848821800\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
+        "projectName": "ProjetoClassificados",
+        "projectPath": "C:\\Users\\33848821800\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
+        "packagesPath": "C:\\Users\\33848821800\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\33848821800\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\33848821800\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 2fea2011513fa287192b207bd0746eef1a30f5b5
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

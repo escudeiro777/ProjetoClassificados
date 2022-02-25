@@ -48,7 +48,8 @@ CREATE TABLE modelo
 (
 	idModelo INT PRIMARY KEY IDENTITY,
 	idMarca SMALLINT FOREIGN KEY REFERENCES marca(idMarca),
-	nomeMarca VARCHAR(100) NOT NULL
+	nomeModelo VARCHAR(100) NOT NULL,
+	descricao VARCHAR(300),
 );
 GO
 
@@ -64,20 +65,43 @@ CREATE TABLE fotosProduto
 );
 GO
 
+
+-- COR
+CREATE TABLE cor
+(
+	idCor TINYINT PRIMARY KEY IDENTITY,
+	nomeCor VARCHAR(50) NOT NULL
+);
+GO
+
+
+-- ESTADO
+CREATE TABLE estado
+(
+	idEstado TINYINT PRIMARY KEY IDENTITY,
+	nomeEstado VARCHAR(50)
+);
+GO
+
+
+
 -- PRODUTO
 CREATE TABLE produto
 (
 	idProduto INT PRIMARY KEY IDENTITY,
-	idFotosProduto SMALLINT FOREIGN KEY REFERENCES fotosProduto(idfotosProduto),
+	idFotoProduto SMALLINT FOREIGN KEY REFERENCES fotosProduto(idfotosProduto),
 	idSituacao SMALLINT FOREIGN KEY REFERENCES situacao(idSituacao),
 	idModelo INT FOREIGN KEY REFERENCES modelo(idModelo),
 	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario),
-	dataAnuncio DATETIME NOT NULL,
+	idEstado TINYINT FOREIGN KEY REFERENCES estado(idEstado),
+	idCor TINYINT FOREIGN KEY REFERENCES cor(idcor),
+	tituloAnuncio VARCHAR(50) NOT NULL,
 	descricao VARCHAR(300) NOT NULL,
-	titulo VARCHAR(50) NOT NULL,
-	ano VARCHAR(4) NOT NULL,
-	km FLOAT NOT NULL,
-	cor VARCHAR(50) NOT NULL
+	dataAnuncio DATETIME NOT NULL,
+	anoVeiculo VARCHAR(4) NOT NULL,
+	km SMALLINT NOT NULL,
+	cidade VARCHAR(100) NOT NULL,
+	preco MONEY NOT NULL
 );
 GO
 
@@ -88,8 +112,8 @@ CREATE TABLE denuncia
 	idProduto INT FOREIGN KEY REFERENCES produto(idProduto),
 	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario),
 	dataDenuncia DATETIME NOT NULL,
-	descricao VARCHAR(300) NOT NULL,
-	titulo VARCHAR(50) NOT NULL
+	titulo VARCHAR(50) NOT NULL,
+	descricao VARCHAR(300) NOT NULL
 );
 GO
 
