@@ -48,9 +48,12 @@ CREATE TABLE modelo
 (
 	idModelo INT PRIMARY KEY IDENTITY,
 	idMarca SMALLINT FOREIGN KEY REFERENCES marca(idMarca),
-	nomeMarca VARCHAR(100) NOT NULL
+	nomeModelo VARCHAR(100) NOT NULL
 );
 GO
+
+DROP table modelo
+
 
 -- FOTOS DO PRODUTO
 CREATE TABLE fotosProduto
@@ -92,6 +95,20 @@ CREATE TABLE denuncia
 	titulo VARCHAR(50) NOT NULL
 );
 GO
+
+INSERT INTO tipoUsuario(titulo)
+VALUES ('Comum');
+GO
+
+INSERT INTO usuario (nome, email, senha, idTipoUsuario)
+VALUES ('murillo', 'murillo@email.com', '12345678', 1);
+GO
+
+INSERT INTO MARCA (nome)
+VALUES ('Chevrolet'), ('Fiat');
+GO
+
+INSERT INTO modelo (idMarca, nomeMarca
 
 
 
