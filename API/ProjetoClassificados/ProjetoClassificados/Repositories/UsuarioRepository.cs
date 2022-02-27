@@ -3,6 +3,7 @@ using ProjetoClassificados.Domains;
 using ProjetoClassificados.Interfaces;
 using ProjetoClassificados.Utils;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjetoClassificados.Repositories
@@ -12,6 +13,8 @@ namespace ProjetoClassificados.Repositories
         ECS_Context ctx = new();
         public void CadastrarUsuario(Usuario novoUsuario)
         {
+            string senhaHash = Criptografia.gerarHash(novoUsuario.Senha);
+            novoUsuario.Senha = senhaHash;
             ctx.Usuarios.Add(novoUsuario);
             ctx.SaveChanges();
         }
@@ -37,6 +40,19 @@ namespace ProjetoClassificados.Repositories
                 }
             }
             return null;
+        }
+
+        public List<Usuario> ListarUsuario()
+        {
+            return ctx.Usuarios.Select(u => new Usuario
+            {
+                Nome = u.Nome,
+                Email = u.Email,
+                Senha = u.Senha,
+                NotaComprador = u.NotaComprador,
+                NotaVendedor = u.NotaVendedor
+
+            }).ToList();
         }
     }
 }
