@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoClassificados.Domains;
 using ProjetoClassificados.Interfaces;
 using ProjetoClassificados.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 
 namespace ProjetoClassificados.Controllers
 {
@@ -69,6 +72,34 @@ namespace ProjetoClassificados.Controllers
             {
 
                 return BadRequest(ex);
+            }
+        }
+
+        //[Authorize(Roles = "1,2")]
+        [HttpPost("imagem")]
+        public IActionResult SalvarImgUsuario(IFormFile arquivo)
+        {
+            try
+            {
+                if (arquivo.Length > 80000)
+                    return BadRequest(new { mensagem = "O tamanho maximo de 3MB da imagem foi atingido." });
+
+                string extensao = arquivo.FileName.Split('.').Last();
+
+                if (extensao != "jpg")
+                    return BadRequest(new { mensagem = "Apenas arquivos png e jpg sao permitidos" });
+
+                //int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                int idUsuario = 1;
+
+                _usuarioRepository.SalvarFotoDiretorio(arquivo, idUsuario);
+
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
     }

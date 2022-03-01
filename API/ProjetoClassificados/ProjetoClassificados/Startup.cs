@@ -8,8 +8,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
-//using ProjetoClassificados.Interfaces;
-//using ProjetoClassificados.Repositories;
+using ProjetoClassificados.Interfaces;
+using ProjetoClassificados.Repositories;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -51,7 +51,7 @@ namespace ProjetoClassificados
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Patrimonio.webAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Classificados.webAPI", Version = "v1" });
 
             });
 
@@ -74,7 +74,7 @@ namespace ProjetoClassificados
                     };
                 });
 
-            //services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
         }
 
@@ -89,7 +89,7 @@ namespace ProjetoClassificados
             app.UseSwagger();
 
             app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Patrimonio.webAPI");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "cLASSIFICADOS.webAPI");
                 c.RoutePrefix = string.Empty;
             });
 

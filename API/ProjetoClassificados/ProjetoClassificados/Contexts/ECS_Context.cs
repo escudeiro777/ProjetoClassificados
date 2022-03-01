@@ -20,7 +20,7 @@ namespace ProjetoClassificados.Contexts
 
         public virtual DbSet<Anuncio> Anuncios { get; set; }
         public virtual DbSet<Cor> Cors { get; set; }
-        public virtual DbSet<Denuncium> Denuncia { get; set; }
+        public virtual DbSet<Denuncia> Denuncia { get; set; }
         public virtual DbSet<Estado> Estados { get; set; }
         public virtual DbSet<FotoProduto> FotoProdutos { get; set; }
         public virtual DbSet<Marca> Marcas { get; set; }
@@ -33,8 +33,10 @@ namespace ProjetoClassificados.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source=PANZERII\\SQLEXPRESS; initial catalog=ESCUDERIA_CAR_SALE; user id=sa; pwd=senai@#132;");
+                //optionsBuilder.UseSqlServer("Data Source=DESKTOP-KCJ0MKP; initial catalog=ESCUDERIA_CAR_SALE; Integrated Security=True"); //murillo
+                //Scaffold-DbContext "Data Source=PANZERII\SQLEXPRESS; initial catalog=ESCUDERIA_CAR_SALE; user id=sa; pwd=senai@#132;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context ECS_Context
             }
         }
 
@@ -147,7 +149,7 @@ namespace ProjetoClassificados.Contexts
                     .HasColumnName("nomeCor");
             });
 
-            modelBuilder.Entity<Denuncium>(entity =>
+            modelBuilder.Entity<Denuncia>(entity =>
             {
                 entity.HasKey(e => e.IdDenuncia)
                     .HasName("PK__denuncia__D5515747176C89F0");
