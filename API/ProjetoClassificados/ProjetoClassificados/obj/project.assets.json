@@ -7586,19 +7586,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Murillo\\.nuget\\packages\\": {}
+    "C:\\Users\\Werther\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Murillo\\Desktop\\Senai\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
+      "projectUniqueName": "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
       "projectName": "ProjetoClassificados",
-      "projectPath": "C:\\Users\\Murillo\\Desktop\\Senai\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
-      "packagesPath": "C:\\Users\\Murillo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Murillo\\Desktop\\Senai\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\obj\\",
+      "projectPath": "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
+      "packagesPath": "C:\\Users\\Werther\\.nuget\\packages\\",
+      "outputPath": "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Murillo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Werther\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7669,12 +7669,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.12, 5.0.12]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7683,7 +7677,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -8,8 +8,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
-using ProjetoClassificados.Interfaces;
-using ProjetoClassificados.Repositories;
+//using ProjetoClassificados.Interfaces;
+//using ProjetoClassificados.Repositories;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -74,7 +74,7 @@ namespace ProjetoClassificados
                     };
                 });
 
-            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            //services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
         }
 

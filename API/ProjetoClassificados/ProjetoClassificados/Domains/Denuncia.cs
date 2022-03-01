@@ -8,13 +8,13 @@ namespace ProjetoClassificados.Domains
     public partial class Denuncia
     {
         public int IdDenuncia { get; set; }
-        public int? IdProduto { get; set; }
-        public int? IdUsuario { get; set; }
-        public DateTime DataDenuncia { get; set; }
-        public string Descricao { get; set; }
+        public int IdAnuncio { get; set; }
+        public int IdUsuario { get; set; }
         public string Titulo { get; set; }
+        public string Descricao { get; set; }
+        public DateTime DataDenuncia { get; set; }
 
-        public virtual Produto IdProdutoNavigation { get; set; }
+        public virtual Anuncio IdAnuncioNavigation { get; set; }
         public virtual Usuario IdUsuarioNavigation { get; set; }
     }
 }
