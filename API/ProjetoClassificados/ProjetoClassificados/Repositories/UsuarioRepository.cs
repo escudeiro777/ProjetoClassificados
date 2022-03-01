@@ -93,13 +93,15 @@ namespace ProjetoClassificados.Repositories
         {
             Usuario infos = ctx.Usuarios.FirstOrDefault(u => u.IdUsuario == idUsuario);
 
-            string nomeArquivo = infos.IdUsuario.ToString() + "_" + infos.Nome + "_" + fotoUsuario.FileName.Split('.').Last();
-            
-            infos.CaminhoImagemUsuario = nomeArquivo;
+            string nomeArquivo = infos.IdUsuario.ToString() + "_" + infos.Nome + "." + fotoUsuario.FileName.Split('.').Last();
+
+            string path = "StaticFiles\\Fotos_Usuarios";
+
+            infos.CaminhoImagemUsuario = Directory.GetCurrentDirectory() + "\\" + path + "\\" + nomeArquivo;
 
             this.AtualizarUsuario(infos);
 
-            using (var stream = new FileStream(Path.Combine("StaticFiles\\Fotos_Usuarios", nomeArquivo), FileMode.Create))
+            using (var stream = new FileStream(Path.Combine(path, nomeArquivo), FileMode.Create))
             {
                 fotoUsuario.CopyTo(stream);
             }
