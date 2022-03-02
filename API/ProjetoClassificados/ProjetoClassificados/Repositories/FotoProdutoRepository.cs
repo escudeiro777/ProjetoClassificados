@@ -20,10 +20,13 @@ namespace ProjetoClassificados.Repositories
 
             using (var ms = new MemoryStream())
             {
+                FotoProduto n_seq = ctx.FotoProdutos.OrderBy(n => n.IdFotoProduto).Last();
+                int indice = n_seq.IdFotoProduto + 1;
+
                 fotoDoProduto.CopyTo(ms);
 
                 novaImg.ImgBinario = ms.ToArray();
-                novaImg.NomeArquivo = idProduto + "_" + novaImg.IdFotoProduto + "_" + fotoDoProduto.FileName;
+                novaImg.NomeArquivo = idProduto + "_" + indice.ToString() + "_" + fotoDoProduto.FileName;
                 novaImg.MimeType = fotoDoProduto.FileName.Split('.').Last();
                 novaImg.DataInclusao = DateTime.Now;
                 novaImg.IdAnuncio = idProduto;
