@@ -81,16 +81,16 @@ namespace ProjetoClassificados.Controllers
         {
             try
             {
-                if (arquivo.Length > 80000)
-                    return BadRequest(new { mensagem = "O tamanho maximo de 3MB da imagem foi atingido." });
+                if (arquivo.Length > 150000)
+                    return BadRequest(new { mensagem = "O tamanho maximo de 150KB da imagem foi atingido." });
 
                 string extensao = arquivo.FileName.Split('.').Last();
 
-                if (extensao != "jpg")
-                    return BadRequest(new { mensagem = "Apenas arquivos png e jpg sao permitidos" });
+                if (extensao != "jpg" && extensao != "png")
+                    return BadRequest(new { mensagem = "Apenas arquivos .png e .jpg sao permitidos" });
 
-                //int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-                int idUsuario = 1;
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                //int idUsuario = 1;
 
                 _usuarioRepository.SalvarFotoDiretorio(arquivo, idUsuario);
 
@@ -99,6 +99,27 @@ namespace ProjetoClassificados.Controllers
             }
             catch (Exception ex)
             {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        //[Authorize(Roles = "1,2")]
+        [HttpGet("imagem")]
+        public IActionResult MostrarImgUsuario()
+        {
+            try
+            {
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                //int idUsuario = 1;
+
+                string base64 = _usuarioRepository.CarregarFotoDiretorio(idUsuario);
+
+                return Ok(base64);
+            }
+            catch (Exception ex)
+            {
+
                 return BadRequest(ex.Message);
             }
         }

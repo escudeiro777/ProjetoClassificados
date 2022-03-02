@@ -12,11 +12,15 @@ namespace ProjetoClassificados.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
+        private readonly string path = "StaticFiles\\Fotos_Usuarios";
+
         ECS_Context ctx = new();
         public void CadastrarUsuario(Usuario novoUsuario)
         {
             string senhaHash = Criptografia.gerarHash(novoUsuario.Senha);
             novoUsuario.Senha = senhaHash;
+            novoUsuario.IdTipoUsuario = 1;
+            novoUsuario.CaminhoImagemUsuario = Directory.GetCurrentDirectory() + "\\" + path + "\\" + "imgPadrao.png";
             ctx.Usuarios.Add(novoUsuario);
             ctx.SaveChanges();
         }
@@ -50,6 +54,7 @@ namespace ProjetoClassificados.Repositories
             return ctx.Usuarios.FirstOrDefault(u => u.IdUsuario == idUsuarioBuscado);
         }
 
+
         public List<Usuario> ListarUsuario()
         {
             return ctx.Usuarios.Select(u => new Usuario
@@ -63,6 +68,7 @@ namespace ProjetoClassificados.Repositories
 
             }).ToList();
         }
+
 
         public void AtualizarUsuario(Usuario usuarioAtualizado)
         {
@@ -83,19 +89,19 @@ namespace ProjetoClassificados.Repositories
             }
         }
 
+
         public void DeletarUsuario(int idUsuario)
         {
             ctx.Usuarios.Remove(BuscarPorId(idUsuario));
             ctx.SaveChanges();
         }
 
+
         public void SalvarFotoDiretorio(IFormFile fotoUsuario, int idUsuario)
         {
             Usuario infos = ctx.Usuarios.FirstOrDefault(u => u.IdUsuario == idUsuario);
 
             string nomeArquivo = infos.IdUsuario.ToString() + "_" + infos.Nome + "." + fotoUsuario.FileName.Split('.').Last();
-
-            string path = "StaticFiles\\Fotos_Usuarios";
 
             infos.CaminhoImagemUsuario = Directory.GetCurrentDirectory() + "\\" + path + "\\" + nomeArquivo;
 
@@ -109,7 +115,11 @@ namespace ProjetoClassificados.Repositories
 
         public string CarregarFotoDiretorio(int idUsuario)
         {
-            throw new NotImplementedException();
+            Usuario infos = ctx.Usuarios.FirstOrDefault(u => u.IdUsuario == idUsuario);
+
+            byte[] foto_em_bytes = File.ReadAllBytes(infos.CaminhoImagemUsuario);
+
+            return Convert.ToBase64String(foto_em_bytes);
         }
 
        
