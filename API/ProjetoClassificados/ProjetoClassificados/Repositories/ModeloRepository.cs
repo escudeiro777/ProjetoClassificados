@@ -39,7 +39,7 @@ namespace ProjetoClassificados.Repositories
            {
                IdModelo = x.IdModelo,
                IdMarcaNavigation = x.IdMarcaNavigation,
-               NomeMarca = x.NomeMarca, //NomeModelo / Foi escrito errado!
+               NomeModelo = x.NomeModelo, //NomeModelo / Foi escrito errado!
            })
            .ToList();
         }

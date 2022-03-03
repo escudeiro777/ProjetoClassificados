@@ -9,14 +9,15 @@ namespace ProjetoClassificados.Domains
     {
         public Modelo()
         {
-            Produtos = new HashSet<Produto>();
+            Anuncios = new HashSet<Anuncio>();
         }
 
         public int IdModelo { get; set; }
         public short? IdMarca { get; set; }
-        public string NomeMarca { get; set; }
+        public string NomeModelo { get; set; }
+        public string Descricao { get; set; }
 
         public virtual Marca IdMarcaNavigation { get; set; }
-        public virtual ICollection<Produto> Produtos { get; set; }
+        public virtual ICollection<Anuncio> Anuncios { get; set; }
     }
 }

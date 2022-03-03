@@ -38,7 +38,7 @@ namespace ProjetoClassificados.Repositories
           .Select(x => new Marca
           {
               IdMarca = x.IdMarca,
-              Nome = x.Nome, //NomeModelo / Foi escrito errado!
+              NomeMarca = x.NomeMarca, //NomeModelo / Foi escrito errado! //Atualizado
            })
           .ToList();
         }

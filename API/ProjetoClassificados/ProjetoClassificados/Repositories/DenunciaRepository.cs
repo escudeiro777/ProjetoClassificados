@@ -1,4 +1,5 @@
-﻿using ProjetoClassificados.Domains;
+﻿using ProjetoClassificados.Contexts;
+using ProjetoClassificados.Domains;
 using ProjetoClassificados.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,14 +10,25 @@ namespace ProjetoClassificados.Repositories
 {
     public class DenunciaRepository : IDenunciaRepository
     {
-        public void Cadastrar(Denuncia novaDenuncia)
+        ECS_Context ctx = new ECS_Context();
+
+        public Denuncium BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            return ctx.Denuncia.FirstOrDefault(x => x.IdAnuncio == id);
+        }
+
+        public void Cadastrar(Denuncium novaDenuncia)
+        {
+            ctx.Denuncia.Add(novaDenuncia);
+
+            ctx.SaveChanges();
         }
 
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            ctx.Denuncia.Remove(BuscarPorId(id));
+
+            ctx.SaveChanges();
         }
     }
 }

@@ -11,3 +11,4 @@ GO
 
 select * from tipoUsuario
 select * from usuario
+

@@ -5,15 +5,15 @@ using System.Collections.Generic;
 
 namespace ProjetoClassificados.Domains
 {
-    public partial class Situacao
+    public partial class Cor
     {
-        public Situacao()
+        public Cor()
         {
             Anuncios = new HashSet<Anuncio>();
         }
 
-        public short IdSituacao { get; set; }
-        public string TituloSituacao { get; set; }
+        public byte IdCor { get; set; }
+        public string NomeCor { get; set; }
 
         public virtual ICollection<Anuncio> Anuncios { get; set; }
     }
