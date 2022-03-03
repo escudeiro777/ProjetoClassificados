@@ -7,7 +7,7 @@
 
 .home__banner {
     height: 500px;
-    background-image: linear-gradient(rgba(2, 0, 3, 0.5), rgba(2, 0, 3, 0.5)), url(../img/bannerHome.png);
+    background-image: linear-gradient(rgba(1, 0, 3, 0.5), rgba(1, 0, 3, 0.5)), url(../img/bannerHome.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -20,7 +20,7 @@
 }
 
 .home__banner p {
-    width: 250px;
+    /* width: 250px; */
     font-size: 75px;
     margin-left: 10vw;
 }
@@ -37,9 +37,20 @@
     border-style: none;
     margin-right: 10vw;
     font-family: 'Michroma', sans-serif;
+    font-size: 20px;
+}
+
+.btn__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner__btn span {
+    text-transform: uppercase;
+    font-size: 25px;
 }
 
 .btn__img {
-    width: 35px;
+    width: 50px;
     height: fit-content;
 }

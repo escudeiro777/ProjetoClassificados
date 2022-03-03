@@ -19,12 +19,14 @@ export default function Header() {
             <header>
                 <div className='header__conteudo container'>
                     <img src={logo} alt='logo-Escuderia' className='header__logo' />
-                    <Link to='/'><Icon icon="fe:login" /> Login</Link>
+                    <Link to='/' className='btn__login'><Icon icon="fe:login" className='icon' /> Login</Link>
                 </div>
             </header>
             <nav className='header__busca'>
                 <div className='header__conteudo container'>
-                    <input type='search'></input>
+                    <label className='input__busca'>
+                        <input type='search'></input><Icon icon="akar-icons:search" />
+                    </label>
                     <img src={logoVolksvagen} alt='logo-Volksvagen' className='header__marcas' />
                     <img src={logoChevrolet} alt='logo-Chevrolet' className='header__marcas' />
                     <img src={logoRenault} alt='logo-Renault' className='header__marcas' />

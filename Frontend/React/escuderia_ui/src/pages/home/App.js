@@ -17,7 +17,15 @@ function App() {
       <Header />
       <section className='home__banner'>
         <p>Dê 'match' com seu carro ideal!</p>
-        <button type='submit' className='banner__btn'><img src={fireMatch} alt='' className='btn__img'/> Ir pro Match</button>
+        <button
+          type='submit'
+          className='banner__btn'>
+          <img src={fireMatch} alt='' className='btn__img' />
+          <div className='btn__text'>
+            Ir pro
+            <span>Match</span>
+          </div>
+        </button>
       </section>
 
       <span>Recomendados para você</span>
