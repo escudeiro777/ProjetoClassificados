@@ -39,7 +39,7 @@ GO
 CREATE TABLE marca
 (
 	idMarca SMALLINT PRIMARY KEY IDENTITY,
-	nome VARCHAR (50) NOT NULL
+	nomeMarca VARCHAR (50) NOT NULL
 );
 GO
 
@@ -48,16 +48,11 @@ CREATE TABLE modelo
 (
 	idModelo INT PRIMARY KEY IDENTITY,
 	idMarca SMALLINT FOREIGN KEY REFERENCES marca(idMarca),
-<<<<<<< HEAD
 	nomeModelo VARCHAR(100) NOT NULL
-=======
-	nomeModelo VARCHAR(100) NOT NULL,
-	descricao VARCHAR(300),
->>>>>>> 4ae8c11ba8089e7ed4512a81a1b941fa1d77e558
+	descricao VARCHAR(300)
 );
 GO
 
-DROP table modelo
 
 
 -- FOTOS DO PRODUTO
