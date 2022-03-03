@@ -19,7 +19,7 @@ export default function Header() {
             <header>
                 <div className='header__conteudo container'>
                     <img src={logo} alt='logo-Escuderia' className='header__logo' />
-                    <Link to='/' className='btn__login'><Icon icon="fe:login" className='icon' /> Login</Link>
+                    <Link to='/login' className='btn__login'><Icon icon="fe:login" className='icon' /> Login</Link>
                 </div>
             </header>
             <nav className='header__busca'>
