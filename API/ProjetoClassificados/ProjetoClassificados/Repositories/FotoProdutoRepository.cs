@@ -37,7 +37,15 @@ namespace ProjetoClassificados.Repositories
 
         public List<string> CarregarFotosProduto(int idProduto)
         {
-            throw new NotImplementedException();
+            List<string> listaFotos = new List<string>();
+            List<FotoProduto> fotosDoProduto = ctx.FotoProdutos.Where(f => f.IdAnuncio == idProduto).ToList();
+            
+            foreach (var item in fotosDoProduto)
+            {
+                listaFotos.Add(Convert.ToBase64String(item.ImgBinario));
+            }
+
+            return listaFotos;
         }
     }
 }

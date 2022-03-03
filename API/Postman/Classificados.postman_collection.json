@@ -67,7 +67,7 @@
 						{
 							"key": "arquivo",
 							"type": "file",
-							"src": "/C:/Users/Werther/Pictures/lobo/lobo1.jpg"
+							"src": "/C:/Users/Werther/Pictures/lobo/lobo2.jpg"
 						},
 						{
 							"key": "",
@@ -78,7 +78,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/FotosProdutos",
+					"raw": "http://localhost:5000/api/FotosProdutos/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -86,7 +86,39 @@
 					"port": "5000",
 					"path": [
 						"api",
-						"FotosProdutos"
+						"FotosProdutos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CarregarFotosProduto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpZ2lhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwicm9sZSI6IjMiLCJleHAiOjE2Mzg3MzExMTQsImlzcyI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSIsImF1ZCI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSJ9.RQCKE9K7xUewTPscwOIij1etlIENgL5yAleBSKKo-1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/FotosProdutos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"FotosProdutos",
+						"1"
 					]
 				}
 			},

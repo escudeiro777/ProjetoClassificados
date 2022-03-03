@@ -23,7 +23,7 @@ namespace ProjetoClassificados.Controllers
             _fotoProdutoRepository = new FotoProdutoRepository();
         }
 
-        [HttpPost]
+        [HttpPost("{idProduto}")]
         public IActionResult postarFoto(int idProduto, IFormFile arquivo)
         {
             //idProduto = 1;
@@ -53,6 +53,22 @@ namespace ProjetoClassificados.Controllers
 
                 return BadRequest(ex);
             }
+        }
+
+        [HttpGet("{idAnuncio}")]
+        public IActionResult getFotosProduto(int idAnuncio)
+        {
+            try
+            {
+                return Ok(_fotoProdutoRepository.CarregarFotosProduto(idAnuncio));
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+            
+            
         }
     }
 }
