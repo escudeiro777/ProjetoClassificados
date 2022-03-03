@@ -9,6 +9,7 @@ namespace ProjetoClassificados.Interfaces
     interface IMarcaRepository
     {
         void Cadastrar(Marca novaMarca);
+        Marca BuscarPorId(int id);
         List<Marca> Listar();
         void Deletar(int id);
     }
