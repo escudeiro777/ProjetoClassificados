@@ -10,6 +10,7 @@ namespace ProjetoClassificados.Interfaces
     {
         void Cadastrar(Denuncia novaDenuncia);
         void Deletar(int id);
+        List<Denuncia> Listar();
         Denuncia BuscarPorId(int id);
     }
 }
