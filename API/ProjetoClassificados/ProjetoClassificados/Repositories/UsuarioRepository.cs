@@ -29,22 +29,25 @@ namespace ProjetoClassificados.Repositories
         {
             Usuario usuario = ctx.Usuarios.FirstOrDefault(u => u.Email == email);
 
-            if (usuario != null)
-            {
-                if (usuario.Senha.Length != 60 && usuario.Senha[0].ToString() != "$")
+
+            
+                if (usuario.Senha == senha)
                 {
-                    string senhaHash = Criptografia.gerarHash(senha);
+
+
+                    string senhaHash = Criptografia.gerarHash(usuario.Senha);
                     usuario.Senha = senhaHash;
                     ctx.Usuarios.Update(usuario);
                     ctx.SaveChanges();
                     return usuario;
+
                 }
                 bool confere = Criptografia.compararSenha(senha, usuario.Senha);
                 if (confere)
                 {
                     return usuario;
                 }
-            }
+                        
             return null;
         }
 

@@ -10,6 +10,11 @@ VALUES ('murillo', 'murillo@email.com', '12345678', 1),
 ('putin', 'putin@russia.com', '12345678', 2);
 GO
 
+INSERT INTO usuario (nome, email, senha, idTipoUsuario)
+VALUES 
+('teste2', 'teste2@email.com', '12345678', 2);
+GO
+
 INSERT INTO cor (nomeCor)
 VALUES ('vermelho'),('azul'),('branco'),('prata'),
 ('preto'),('amarelo'),('verde'),('laranja');
