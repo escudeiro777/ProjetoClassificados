@@ -8,6 +8,7 @@ import fireMatch from '../../assets/img/Vectorfire.png';
 
 import Header from '../../components/header/header.jsx';
 import Footer from '../../components/footer/footer.jsx';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [listaAnuncios, setListaAnuncios] = useState([]);
@@ -58,7 +59,7 @@ function App() {
                     }
                   ).format(new Date(anuncio.anoVeiculo))}</span>
                   <span>R$ {anuncio.preco}</span>
-                  <button type='submit'>Ver anúncio</button>
+                  <Link to='/anuncio' className='btn__verAnuncio'>Ver anúncio</Link>
                 </article>
               )
             })

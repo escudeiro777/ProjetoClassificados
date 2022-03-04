@@ -21,8 +21,8 @@ export default function Header() {
         <div>
             <header>
                 <div className='header__conteudo container'>
-                    <img src={logo} alt='logo-Escuderia' className='header__logo' />
-                    <img src={subtitleLogo} alt='escuderia_car_sale' className='header__subtitle' />
+                    <Link to='/'><img src={logo} alt='logo-Escuderia' className='header__logo' /></Link>
+                    <Link to='/'><img src={subtitleLogo} alt='escuderia_car_sale' className='header__subtitle' /></Link>
                     <Link to='/' className='btn__login'><Icon icon="fe:login" className='icon' /> Login</Link>
                 </div>
             </header>

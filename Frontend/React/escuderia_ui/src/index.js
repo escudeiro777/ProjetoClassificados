@@ -12,6 +12,7 @@ import App from '../src/pages/home/App';
 
 import reportWebVitals from './reportWebVitals';
 import Login from './pages/login/login';
+import ListagemAnuncio from './pages/listagemProdutos/paginaAnuncio';
 
 const routing = (
   <Router>
@@ -19,6 +20,7 @@ const routing = (
       <Routes>
         <Route exact path = '/' element = {<App/>}/>
         <Route path = '/login' element = {<Login/>}/>
+        <Route path = '/anuncio' element = {<ListagemAnuncio/>}/>
       </Routes>
     </div>
   </Router>
