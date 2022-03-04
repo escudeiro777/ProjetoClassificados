@@ -60,7 +60,7 @@ namespace ProjetoClassificados
                 options.DefaultAuthenticateScheme = "JwtBearer";
                 options.DefaultChallengeScheme = "JwtBearer";
             })
-                .AddJwtBearer(options =>
+                .AddJwtBearer("JwtBearer", options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
@@ -89,7 +89,7 @@ namespace ProjetoClassificados
             app.UseSwagger();
 
             app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "cLASSIFICADOS.webAPI");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Classificados.webAPI");
                 c.RoutePrefix = string.Empty;
             });
 
