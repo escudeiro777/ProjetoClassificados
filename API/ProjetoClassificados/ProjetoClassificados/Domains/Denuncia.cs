@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ProjetoClassificados.Domains
 {
-    public partial class Denuncium
+    public partial class Denuncia
     {
         public int IdDenuncia { get; set; }
         public int IdAnuncio { get; set; }

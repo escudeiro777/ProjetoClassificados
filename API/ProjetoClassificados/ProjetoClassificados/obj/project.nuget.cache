@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "EvFqKHIhQZEIaWTocU0C+rHCmoctc6gru51yfr/W6jUraxB4DYoO3kG2L0Qr91jD52QOQdFQFUflZbu8JwZevA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\39220866838.INFOSCS\\Documents\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
+  "projectFilePath": "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Werther\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\Werther\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

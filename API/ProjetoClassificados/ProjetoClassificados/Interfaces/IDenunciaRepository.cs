@@ -8,8 +8,8 @@ namespace ProjetoClassificados.Interfaces
 {
     interface IDenunciaRepository
     {
-        void Cadastrar(Denuncium novaDenuncia);
+        void Cadastrar(Denuncia novaDenuncia);
         void Deletar(int id);
-        Denuncium BuscarPorId(int id);
+        Denuncia BuscarPorId(int id);
     }
 }

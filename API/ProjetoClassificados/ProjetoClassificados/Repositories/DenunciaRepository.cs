@@ -12,12 +12,12 @@ namespace ProjetoClassificados.Repositories
     {
         ECS_Context ctx = new ECS_Context();
 
-        public Denuncium BuscarPorId(int id)
+        public Denuncia BuscarPorId(int id)
         {
             return ctx.Denuncia.FirstOrDefault(x => x.IdAnuncio == id);
         }
 
-        public void Cadastrar(Denuncium novaDenuncia)
+        public void Cadastrar(Denuncia novaDenuncia)
         {
             ctx.Denuncia.Add(novaDenuncia);
 
