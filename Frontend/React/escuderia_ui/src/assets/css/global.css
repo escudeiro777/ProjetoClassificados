@@ -10,6 +10,10 @@
     width: 80vw;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* body::-webkit-scrollbar {
     width: 15px;
 }

@@ -1,17 +1,28 @@
 header {
+    height: 100px;
     display: flex;
     justify-content: center;
     background: linear-gradient(90deg, rgba(5, 64, 178, 1) 0%, rgba(111, 160, 255, 1) 16%, rgba(108, 155, 248, 1) 35%, rgba(20, 26, 72, 1) 77%, rgba(2, 0, 36, 1) 100%);
 }
 
 .header__logo {
-    width: 150px;
+    object-fit: contain;
+    width: 200px;
+    margin: 5px 0 5px 0;
+}
+
+.header__subtitle {
+    width: 250px;
 }
 
 .header__conteudo{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+header a {
+    color: #ffff;
 }
 
 .header__busca {
@@ -24,6 +35,8 @@ header {
 .header__marcas{
     width: 60px;
     height: 60px;
+    object-fit: contain;
+    margin: 5px 0 5px 0
 }
 
 .btn__login {

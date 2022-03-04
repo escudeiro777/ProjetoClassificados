@@ -7,6 +7,7 @@ import '../../assets/css/global.css';
 import fireMatch from '../../assets/img/Vectorfire.png';
 
 import Header from '../../components/header/header.jsx';
+import Footer from '../../components/footer/footer.jsx';
 
 function App() {
   const [listaAnuncios, setListaAnuncios] = useState([]);
@@ -42,15 +43,15 @@ function App() {
       <div className='div__Recomendados'>
         <p className='container'>Recomendados para você</p>
       </div>
-
-      <section className='section__anuncios container'>
+      <section className='conteudo__section'>
+        <section className='section__anuncios container'>
           {
             listaAnuncios.slice(1, 7).map((anuncio) => {
               return (
                 <article className='box__anuncio' key={anuncio.id}>
                   <img src={anuncio.imgCarro} alt='imagem_do_carro'></img>
                   <span className='titulo__anuncio'>{anuncio.tituloAnuncio}</span>
-                  <span>{anuncio.idEstadoNavigation.nomeEstado}</span>
+                  <span>Estado: {anuncio.estado}</span>
                   <span>Ano: {Intl.DateTimeFormat("pt-BR",
                     {
                       year: 'numeric'
@@ -62,8 +63,9 @@ function App() {
               )
             })
           }
+        </section>
       </section>
-
+      <Footer />
     </div>
   );
 }
