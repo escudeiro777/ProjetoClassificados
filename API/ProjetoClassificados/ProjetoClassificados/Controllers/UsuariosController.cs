@@ -75,7 +75,7 @@ namespace ProjetoClassificados.Controllers
             }
         }
 
-        //[Authorize(Roles = "1,2")]
+        [Authorize]
         [HttpPost("imagem")]
         public IActionResult SalvarImgUsuario(IFormFile arquivo)
         {
@@ -90,7 +90,6 @@ namespace ProjetoClassificados.Controllers
                     return BadRequest(new { mensagem = "Apenas arquivos .png e .jpg sao permitidos" });
 
                 int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-                //int idUsuario = 1;
 
                 _usuarioRepository.SalvarFotoDiretorio(arquivo, idUsuario);
 
@@ -104,7 +103,7 @@ namespace ProjetoClassificados.Controllers
         }
 
 
-        //[Authorize(Roles = "1,2")]
+        [Authorize]
         [HttpGet("imagem")]
         public IActionResult MostrarImgUsuario()
         {

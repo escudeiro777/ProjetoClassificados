@@ -60,7 +60,7 @@ namespace ProjetoClassificados
                 options.DefaultAuthenticateScheme = "JwtBearer";
                 options.DefaultChallengeScheme = "JwtBearer";
             })
-                .AddJwtBearer(options =>
+                .AddJwtBearer("JwtBearer", options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {

@@ -23,7 +23,7 @@ namespace ProjetoClassificados.Controllers
             _fotoProdutoRepository = new FotoProdutoRepository();
         }
 
-        [HttpPost("{idProduto}")]
+        [HttpPut("{idProduto}")]
         public IActionResult postarFoto(int idProduto, IFormFile arquivo)
         {
             //idProduto = 1;
