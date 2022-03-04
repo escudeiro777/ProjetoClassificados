@@ -11,6 +11,9 @@ namespace ProjetoClassificados.Repositories
     public class AnuncioRepository : IAnuncioRepository
     {
         ECS_Context ctx = new ECS_Context();
+
+        
+
         public Anuncio BuscarAnuncioPorId(int idAnuncio)
         {
             return ctx.Anuncios.FirstOrDefault(a => a.IdAnuncio == idAnuncio);

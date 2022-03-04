@@ -11,5 +11,6 @@ namespace ProjetoClassificados.Interfaces
         Anuncio BuscarAnuncioPorId(int idAnuncio);
 
         void CadastrarAnuncio(Anuncio novoAnuncio);
+
     }
 }
