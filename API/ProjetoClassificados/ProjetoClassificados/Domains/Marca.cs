@@ -13,7 +13,7 @@ namespace ProjetoClassificados.Domains
         }
 
         public short IdMarca { get; set; }
-        public string Nome { get; set; }
+        public string NomeMarca { get; set; }
 
         public virtual ICollection<Modelo> Modelos { get; set; }
     }

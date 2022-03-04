@@ -9,9 +9,8 @@ namespace ProjetoClassificados.Domains
     {
         public Usuario()
         {
-            Denuncia = new HashSet<Denuncia>();
-            FotosProdutos = new HashSet<FotosProduto>();
-            Produtos = new HashSet<Produto>();
+            Anuncios = new HashSet<Anuncio>();
+            Denuncia = new HashSet<Denuncium>();
         }
 
         public int IdUsuario { get; set; }
@@ -24,8 +23,7 @@ namespace ProjetoClassificados.Domains
         public string CaminhoImagemUsuario { get; set; }
 
         public virtual TipoUsuario IdTipoUsuarioNavigation { get; set; }
-        public virtual ICollection<Denuncia> Denuncia { get; set; }
-        public virtual ICollection<FotosProduto> FotosProdutos { get; set; }
-        public virtual ICollection<Produto> Produtos { get; set; }
+        public virtual ICollection<Anuncio> Anuncios { get; set; }
+        public virtual ICollection<Denuncium> Denuncia { get; set; }
     }
 }
