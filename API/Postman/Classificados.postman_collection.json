@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "29d58d6a-e129-4488-b82a-20f322c5295f",
+		"name": "Classificados",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CadastrarFotoUsuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpZ2lhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwicm9sZSI6IjMiLCJleHAiOjE2Mzg3MzExMTQsImlzcyI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSIsImF1ZCI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSJ9.RQCKE9K7xUewTPscwOIij1etlIENgL5yAleBSKKo-1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "arquivo",
+							"type": "file",
+							"src": "/D:/Imagens/IMG/zeroum.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/usuarios/imagem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"usuarios",
+						"imagem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdicionarFotoProduto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpZ2lhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwicm9sZSI6IjMiLCJleHAiOjE2Mzg3MzExMTQsImlzcyI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSIsImF1ZCI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSJ9.RQCKE9K7xUewTPscwOIij1etlIENgL5yAleBSKKo-1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "arquivo",
+							"type": "file",
+							"src": "/C:/Users/Werther/Pictures/lobo/lobo2.jpg"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/FotosProdutos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"FotosProdutos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CarregarFotosProduto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpZ2lhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwicm9sZSI6IjMiLCJleHAiOjE2Mzg3MzExMTQsImlzcyI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSIsImF1ZCI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSJ9.RQCKE9K7xUewTPscwOIij1etlIENgL5yAleBSKKo-1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/FotosProdutos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"FotosProdutos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CadastrarUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"samuel\",\r\n    \"email\" : \"samuel@email.com\",\r\n    \"senha\" : \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CarregarFotoUsuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpZ2lhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwicm9sZSI6IjMiLCJleHAiOjE2Mzg3MzExMTQsImlzcyI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSIsImF1ZCI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSJ9.RQCKE9K7xUewTPscwOIij1etlIENgL5yAleBSKKo-1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/usuarios/imagem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"usuarios",
+						"imagem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CadastrarAnuncio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpZ2lhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwicm9sZSI6IjMiLCJleHAiOjE2Mzg3MzExMTQsImlzcyI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSIsImF1ZCI6IlNQTWVkaWNhbEdyb3VwLndlYkFQSSJ9.RQCKE9K7xUewTPscwOIij1etlIENgL5yAleBSKKo-1w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idUsuario\": 1,\r\n  \"idSituacao\": 1,\r\n  \"idModelo\": 1,\r\n  \"idCor\": 1,\r\n  \"idEstado\": 1,\r\n  \"tituloAnuncio\": \"primeiro anuncio\",\r\n  \"descricao\": \"teste de primeiro anuncio\",\r\n  \"dataAnuncio\": \"2022-03-02T15:04:15.332Z\",\r\n  \"anoVeiculo\": \"2020\",\r\n  \"km\": 5000,\r\n  \"cidade\": \"sao paulo\",\r\n  \"preco\": 15000,\r\n  \"troca\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/anuncios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"anuncios"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

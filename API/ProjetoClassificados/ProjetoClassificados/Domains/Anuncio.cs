@@ -9,7 +9,7 @@ namespace ProjetoClassificados.Domains
     {
         public Anuncio()
         {
-            Denuncia = new HashSet<Denuncium>();
+            Denuncia = new HashSet<Denuncia>();
             FotoProdutos = new HashSet<FotoProduto>();
         }
 
@@ -33,7 +33,7 @@ namespace ProjetoClassificados.Domains
         public virtual Modelo IdModeloNavigation { get; set; }
         public virtual Situacao IdSituacaoNavigation { get; set; }
         public virtual Usuario IdUsuarioNavigation { get; set; }
-        public virtual ICollection<Denuncium> Denuncia { get; set; }
+        public virtual ICollection<Denuncia> Denuncia { get; set; }
         public virtual ICollection<FotoProduto> FotoProdutos { get; set; }
     }
 }

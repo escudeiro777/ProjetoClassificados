@@ -8,11 +8,8 @@ namespace ProjetoClassificados.Interfaces
 {
     interface IAnuncioRepository
     {
-        void Cadastrar(Anuncio novoAnuncio);
-        List<Anuncio> ListarMinhas(int id);
-        List<Anuncio> Listar();
-        void Atualizar(int id, Anuncio AnuncioAtualizada);
-        void Deletar(int id);
-        Anuncio BuscarPorId(int id);
+        Anuncio BuscarAnuncioPorId(int idAnuncio);
+
+        void CadastrarAnuncio(Anuncio novoAnuncio);
     }
 }

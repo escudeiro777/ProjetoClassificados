@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ProjetoClassificados.Contexts;
+﻿using ProjetoClassificados.Contexts;
 using ProjetoClassificados.Domains;
 using ProjetoClassificados.Interfaces;
 using System;
@@ -12,55 +11,15 @@ namespace ProjetoClassificados.Repositories
     public class AnuncioRepository : IAnuncioRepository
     {
         ECS_Context ctx = new ECS_Context();
-
-        public void Atualizar(int id, Anuncio AnuncioAtualizada)
+        public Anuncio BuscarAnuncioPorId(int idAnuncio)
         {
-            throw new NotImplementedException();
+            return ctx.Anuncios.FirstOrDefault(a => a.IdAnuncio == idAnuncio);
         }
 
-        public Anuncio BuscarPorId(int id)
+        public void CadastrarAnuncio(Anuncio novoAnuncio)
         {
-            return ctx.Anuncios.FirstOrDefault(x => x.IdAnuncio == id);
-        }
-
-        public void Cadastrar(Anuncio novoProduto)
-        {
-            ctx.Anuncios.Add(novoProduto);
-
+            ctx.Anuncios.Add(novoAnuncio);
             ctx.SaveChanges();
-        }
-
-
-        public void Deletar(int id)
-        {
-            ctx.Anuncios.Remove(BuscarPorId(id));
-
-            ctx.SaveChanges();
-        }
-
-        public List<Anuncio> Listar()
-        {
-            return ctx.Anuncios
-           .Include(x => x.IdCorNavigation)
-           .Include(x => x.IdEstadoNavigation)
-           .Include(x=> x.IdModeloNavigation)
-           .Include(x => x.IdSituacaoNavigation)
-           .Include(x => x.IdUsuarioNavigation)
-           .Select(x => new Anuncio
-           {
-               IdAnuncio = x.IdAnuncio,
-               IdCorNavigation = x.IdCorNavigation,
-               IdEstadoNavigation = x.IdEstadoNavigation,
-               IdModeloNavigation = x.IdModeloNavigation,
-               IdSituacaoNavigation = x.IdSituacaoNavigation,
-               IdUsuarioNavigation = x.IdUsuarioNavigation
-           })
-           .ToList();
-        }
-
-        public List<Anuncio> ListarMinhas(int id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

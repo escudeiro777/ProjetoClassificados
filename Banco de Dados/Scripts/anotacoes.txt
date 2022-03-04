@@ -1,0 +1,18 @@
+CRUDS PARA USUARIO COMUM:
+
+anuncios
+denuncia
+fotoProduto
+usuario
+
+
+Informacoes preinseridos no BD, cargo admin:
+
+cor
+estado
+situacoes
+tipoUsuarios
+marcas
+modelos
+
+

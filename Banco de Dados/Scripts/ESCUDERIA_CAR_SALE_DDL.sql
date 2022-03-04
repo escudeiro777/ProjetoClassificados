@@ -4,44 +4,57 @@ GO
 USE ESCUDERIA_CAR_SALE;
 GO
 
+
+
 -- TIPO USUARIO
 CREATE TABLE tipoUsuario
 (
 	idTipoUsuario SMALLINT PRIMARY KEY IDENTITY,
+
 	titulo VARCHAR(50) UNIQUE NOT NULL
 );
 GO
+
 
 
 -- USUARIO
 CREATE TABLE usuario
 (
 	idUsuario INT PRIMARY KEY IDENTITY,
-	idTipoUsuario SMALLINT FOREIGN KEY REFERENCES tipoUsuario(idTipoUsuario),
+	idTipoUsuario SMALLINT FOREIGN KEY REFERENCES tipoUsuario(idTipoUsuario) NOT NULL,
+
 	nome VARCHAR(100) NOT NULL,
 	email VARCHAR(255) UNIQUE NOT NULL,
 	senha VARCHAR(255) NOT NULL CHECK ( len(senha) >= 8 ),
-	notaComprador TINYINT NULL,
 	notaVendedor TINYINT NULL,
+	notaComprador TINYINT NULL,
 	caminhoImagemUsuario VARCHAR(255) NULL
 );
 GO 
+
+
 
 -- SITUACAO
 CREATE TABLE situacao
 (
 	idSituacao SMALLINT PRIMARY KEY IDENTITY,
-	tituloSituacao VARCHAR(50) DEFAULT ('Ativo') UNIQUE NOT NULL 
+
+	tituloSituacao VARCHAR(50) DEFAULT ('Ativo') NOT NULL 
 );
 GO
+
+
 
 -- MARCA
 CREATE TABLE marca
 (
 	idMarca SMALLINT PRIMARY KEY IDENTITY,
-	nome VARCHAR (50) NOT NULL
+
+	nomeMarca VARCHAR (50) NOT NULL
 );
 GO
+
+
 
 -- MODELO
 CREATE TABLE modelo
@@ -53,70 +66,79 @@ CREATE TABLE modelo
 );
 GO
 
-DROP table modelo
-
-
--- FOTOS DO PRODUTO
-CREATE TABLE fotosProduto
-(
-	idFotosProduto SMALLINT PRIMARY KEY IDENTITY(1,1),
-	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario),
-	imgBinario VARBINARY(MAX) NOT NULL, -- TAMANHO MAXIMO POSSIVEL PARA ARMAZENAMENTO DE BINARIOS
-	mimeType VARCHAR(30) NOT NULL, -- PARA SALVAR A EXTENS�O DO TIPO DE IMAGEM
-	nomeArquivo VARCHAR(250) NOT NULL,
-	dataInclusao DATETIME DEFAULT GETDATE() NULL
-);
-GO
 
 
 -- COR
 CREATE TABLE cor
 (
 	idCor TINYINT PRIMARY KEY IDENTITY,
+
 	nomeCor VARCHAR(50) NOT NULL
 );
 GO
+
 
 
 -- ESTADO
 CREATE TABLE estado
 (
 	idEstado TINYINT PRIMARY KEY IDENTITY,
+
 	nomeEstado VARCHAR(50)
 );
 GO
 
 
 
--- PRODUTO
-CREATE TABLE produto
+-- ANUNCIO
+CREATE TABLE anuncio
 (
-	idProduto INT PRIMARY KEY IDENTITY,
-	idFotoProduto SMALLINT FOREIGN KEY REFERENCES fotosProduto(idfotosProduto),
-	idSituacao SMALLINT FOREIGN KEY REFERENCES situacao(idSituacao),
-	idModelo INT FOREIGN KEY REFERENCES modelo(idModelo),
-	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario),
-	idEstado TINYINT FOREIGN KEY REFERENCES estado(idEstado),
-	idCor TINYINT FOREIGN KEY REFERENCES cor(idcor),
+	idAnuncio INT PRIMARY KEY IDENTITY,
+
+	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario) NOT NULL,
+	idSituacao SMALLINT FOREIGN KEY REFERENCES situacao(idSituacao) NOT NULL,
+	idModelo INT FOREIGN KEY REFERENCES modelo(idModelo) NOT NULL,
+	idCor TINYINT FOREIGN KEY REFERENCES cor(idcor) NOT NULL,
+	idEstado TINYINT FOREIGN KEY REFERENCES estado(idEstado) NOT NULL,
+	
 	tituloAnuncio VARCHAR(50) NOT NULL,
 	descricao VARCHAR(300) NOT NULL,
 	dataAnuncio DATETIME NOT NULL,
-	anoVeiculo VARCHAR(4) NOT NULL,
+	anoVeiculo CHAR(4) NOT NULL,
 	km SMALLINT NOT NULL,
 	cidade VARCHAR(100) NOT NULL,
-	preco MONEY NOT NULL
+	preco MONEY NOT NULL,
+	troca TINYINT DEFAULT (0) NOT NULL 
 );
 GO
+
+
+
+-- FOTOS DO PRODUTO
+CREATE TABLE fotoProduto
+(
+	idFotoProduto SMALLINT PRIMARY KEY IDENTITY(1,1),
+	idAnuncio INT FOREIGN KEY REFERENCES anuncio(idAnuncio) NOT NULL,
+
+	imgBinario VARBINARY(MAX) NOT NULL, -- TAMANHO MAXIMO POSSIVEL PARA ARMAZENAMENTO DE BINARIOS
+	mimeType VARCHAR(30) NOT NULL, -- PARA SALVAR A EXTENSAO DO TIPO DE IMAGEM
+	nomeArquivo VARCHAR(255) NOT NULL,
+	dataInclusao DATETIME DEFAULT GETDATE() NULL
+);
+GO
+
+
 
 -- DENUNCIA
 CREATE TABLE denuncia
 (
 	idDenuncia INT PRIMARY KEY IDENTITY,
-	idProduto INT FOREIGN KEY REFERENCES produto(idProduto),
-	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario),
-	dataDenuncia DATETIME NOT NULL,
+	idAnuncio INT FOREIGN KEY REFERENCES anuncio(idAnuncio) NOT NULL,
+	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario) NOT NULL,
+
 	titulo VARCHAR(50) NOT NULL,
-	descricao VARCHAR(300) NOT NULL
+	descricao VARCHAR(300) NOT NULL,
+	dataDenuncia DATETIME NOT NULL
 );
 GO
 
