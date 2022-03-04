@@ -3,23 +3,27 @@ import api from "../../services/api";
 import { parseJwt } from "../../services/auth";
 import '../../assets/css/login.css';
 import Header from '../../components/header/header.jsx';
+import axios from "axios";
 
 export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "Pablo39@yahoo.com",
-            senha: "9pDmgRhZz3ON8rh",
+            email: "murillo@email.com",
+            senha: "12345678",
             mensagemDeErro: '',
             carregando: false,
         };
     }
     login = (evento) => {
         evento.preventDefault();
+        console.log(this.state.email);
         this.setState({ mensagemDeErro: "", carregando: true })
-        api.post('/login', {
-            email: this.set.email,
-            senha: this.set.senha,
+        
+        
+        api.post("/login", {
+            email : this.state.email,
+            senha : this.state.senha
         })
 
         .then((resposta) => {
@@ -27,7 +31,7 @@ export default class Login extends Component {
                     localStorage.setItem('usuario-login', resposta.data.token);
                     this.setState({ carregando: false });
 
-                    if (parseJwt().role === '9') {
+                    if (parseJwt().role === '2') {
                         this.props.history.push('/')
                     } else if (parseJwt().role === '1') {
                         this.props.history.push('/')
@@ -54,6 +58,7 @@ export default class Login extends Component {
             <Header/>
             <section className = "containerLogin" >
             <p> ACESSE JÁ SUA CONTA! </p> <div className = "formLogin" >
+            
             <form onSubmit = { this.login }
             className = "formulario" >
             <p className = "loginSenha" > Email: </p> <input value = { this.state.email }
