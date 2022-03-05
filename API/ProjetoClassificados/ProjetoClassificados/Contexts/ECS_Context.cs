@@ -34,10 +34,10 @@ namespace ProjetoClassificados.Contexts
             if (!optionsBuilder.IsConfigured)
             {
                 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                // optionsBuilder.UseSqlServer("Data Source=PANZERII\\SQLEXPRESS; initial catalog=ESCUDERIA_CAR_SALE; user id=sa; pwd=senai@#132;");
+                optionsBuilder.UseSqlServer("Data Source=PANZERII\\SQLEXPRESS; initial catalog=ESCUDERIA_CAR_SALE; user id=sa; pwd=senai@#132;");
                 // optionsBuilder.UseSqlServer("Data Source=NOTE0113C1\\SQLEXPRESS; initial catalog=ESCUDERIA_CAR_SALE; user id=sa; pwd=Senai@132;");
                 // optionsBuilder.UseSqlServer("Data Source=DESKTOP-KCJ0MKP; initial catalog=ESCUDERIA_CAR_SALE; Integrated Security=True"); //murillo
-                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-8FOKHBA\SQLEXPRESS; Initial Catalog=ESCUDERIA_CAR_SALE; user id=sa; pwd=senai@132;"); //Gustavo
+                //optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-8FOKHBA\SQLEXPRESS; Initial Catalog=ESCUDERIA_CAR_SALE; user id=sa; pwd=senai@132;"); //Gustavo
                 // Scaffold-DbContext "Data Source=PANZERII\SQLEXPRESS; initial catalog=ESCUDERIA_CAR_SALE; user id=sa; pwd=senai@#132;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context ECS_Context
             }
         }

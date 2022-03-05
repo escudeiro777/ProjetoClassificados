@@ -7795,19 +7795,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dell\\.nuget\\packages\\": {}
+    "C:\\Users\\Werther\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
+      "projectUniqueName": "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
       "projectName": "ProjetoClassificados",
-      "projectPath": "C:\\Users\\Dell\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
-      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\obj\\",
+      "projectPath": "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\ProjetoClassificados.csproj",
+      "packagesPath": "C:\\Users\\Werther\\.nuget\\packages\\",
+      "outputPath": "D:\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Werther\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7893,13 +7893,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\Dell\\Desktop\\ProjetoClassificados\\API\\ProjetoClassificados\\ProjetoClassificados\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
