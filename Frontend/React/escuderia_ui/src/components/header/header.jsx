@@ -13,17 +13,26 @@ import logoVolksvagen from '../../assets/img/logoVolksvagen.png';
 import logoChevrolet from '../../assets/img/logoChevrolet.png';
 import logoRenault from '../../assets/img/logoRenault.png';
 import logoNissan from '../../assets/img/logoNissan.png';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Header() {
-
+    let history = useHistory();
+    function fazerLogout() {
+        localStorage.removeItem('usuario-login');
+        history.push('/')
+    }
 
     return (
         <div>
             <header>
                 <div className='header__conteudo container'>
-                    <img src={logo} alt='logo-Escuderia' className='header__logo' />
-                    <img src={subtitleLogo} alt='escuderia_car_sale' className='header__subtitle' />
-                    <Link to='/login' className='btn__login'><Icon icon="fe:login" className='icon' /> Login</Link>
+                    <Link to='/'><img src={logo} alt='logo-Escuderia' className='header__logo' /></Link>
+                    <Link to='/'><img src={subtitleLogo} alt='escuderia_car_sale' className='header__subtitle' /></Link>
+
+                    {
+                        localStorage.getItem('usuario-login') == null ? <Link to='/login' className='btn__login'><Icon icon="fe:login" className='icon' /> Login</Link> : <button className='btn__logout' onClick={fazerLogout}>Sair</button>
+                    }
+
                 </div>
             </header>
             <nav className='header__busca'>

@@ -8,13 +8,18 @@ import fireMatch from '../../assets/img/Vectorfire.png';
 
 import Header from '../../components/header/header.jsx';
 import Footer from '../../components/footer/footer.jsx';
+import { Link } from 'react-router-dom';
 
-function App() {
+export default function Home() {
   const [listaAnuncios, setListaAnuncios] = useState([]);
   // let history = useHistory();
 
   function buscarAnuncios() {
-    axios('https://62059c4d161670001741bc7d.mockapi.io/Anuncio').then(response => {
+    axios('http://localhost:5000/api/Anuncios', {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('usuario-login'),
+      }
+    }).then(response => {
       console.log(response)
       if (response.status === 200) {
         setListaAnuncios(response.data);
@@ -46,22 +51,21 @@ function App() {
       <section className='conteudo__section'>
         <section className='section__anuncios container'>
           {
-            listaAnuncios.slice(1, 7).map((anuncio) => {
-              return (
-                <article className='box__anuncio' key={anuncio.id}>
-                  <img src={anuncio.imgCarro} alt='imagem_do_carro'></img>
-                  <span className='titulo__anuncio'>{anuncio.tituloAnuncio}</span>
-                  <span>Estado: {anuncio.estado}</span>
-                  <span>Ano: {Intl.DateTimeFormat("pt-BR",
-                    {
-                      year: 'numeric'
-                    }
-                  ).format(new Date(anuncio.anoVeiculo))}</span>
-                  <span>R$ {anuncio.preco}</span>
-                  <button type='submit'>Ver anúncio</button>
-                </article>
-              )
-            })
+            listaAnuncios !== 0 ?
+              listaAnuncios.slice(0, 5).map((anuncio) => {
+                return (
+                  <article className='box__anuncio' key={anuncio.idAnuncio}>
+                    <img src={anuncio.fotoProdutos} alt='imagem_do_carro'></img>
+                    <span className='titulo__anuncio'>{anuncio.tituloAnuncio}</span>
+                    <span className='situacao__anuncio'>Situação: {anuncio.idSituacaoNavigation.tituloSituacao}</span>
+                    <span>Ano: {anuncio.anoVeiculo}</span>
+                    <span>Estado: {anuncio.idEstadoNavigation.nomeEstado}</span>
+                    <span>R$ {anuncio.preco}</span>
+                    <Link to='/anuncio'>Ver anúncio</Link>
+                  </article>
+                )
+              })
+              : <section className='box__anunciosEmpty container'><p>Não há anúncios para mostrar</p></section>
           }
         </section>
       </section>
@@ -69,5 +73,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
