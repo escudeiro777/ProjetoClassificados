@@ -23,4 +23,10 @@
     <Folder Include="StaticFiles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="StaticFiles\Fotos_Usuarios\1_murillo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

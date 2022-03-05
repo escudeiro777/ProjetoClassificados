@@ -202,3 +202,4 @@ C:\Users\33848821800\Desktop\ProjetoClassificados\API\ProjetoClassificados\Proje
 C:\Users\33848821800\Desktop\ProjetoClassificados\API\ProjetoClassificados\ProjetoClassificados\obj\Debug\net5.0\ref\ProjetoClassificados.dll
 C:\Users\33848821800\Desktop\ProjetoClassificados\API\ProjetoClassificados\ProjetoClassificados\obj\Debug\net5.0\ProjetoClassificados.pdb
 C:\Users\33848821800\Desktop\ProjetoClassificados\API\ProjetoClassificados\ProjetoClassificados\obj\Debug\net5.0\ProjetoClassificados.genruntimeconfig.cache
+C:\Users\Murillo\Desktop\Senai\ProjetoClassificados\API\ProjetoClassificados\ProjetoClassificados\bin\Debug\net5.0\StaticFiles\Fotos_Usuarios\1_murillo.jpg
