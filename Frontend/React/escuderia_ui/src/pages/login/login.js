@@ -3,7 +3,7 @@ import api from "../../services/api";
 import { parseJwt } from "../../services/auth";
 import '../../assets/css/login.css';
 import Header from '../../components/header/header.jsx';
-import axios from "axios";
+import "react-router";
 
 export default class Login extends Component {
     constructor(props) {
@@ -18,6 +18,7 @@ export default class Login extends Component {
     login = (evento) => {
         evento.preventDefault();
         console.log(this.state.email);
+        console.log(this.state.senha);
         this.setState({ mensagemDeErro: "", carregando: true })
         
         
@@ -28,6 +29,7 @@ export default class Login extends Component {
 
         .then((resposta) => {
                 if (resposta.status === 200) {
+                    console.log(this.props.history)
                     localStorage.setItem('usuario-login', resposta.data.token);
                     this.setState({ carregando: false });
 
@@ -39,10 +41,11 @@ export default class Login extends Component {
 
                 }
             })
-            .catch(() => {
+            .catch((erro) => {
+                console.log(erro)
                 this.setState({
                     mensagemDeErro: "Dados Inválidos",
-                    carrergando: false
+                    carregando: false
                 });
             });
     };

@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import {
   Route,
   BrowserRouter as Router,
-  Routes
+  Routes,
+  Switch
 } from 'react-router-dom';
 
 import './index.css';
@@ -16,10 +17,10 @@ import Login from './pages/login/login';
 const routing = (
   <Router>
     <div>
-      <Routes>
-        <Route exact path = '/' element = {<App/>}/>
-        <Route path = '/login' element = {<Login/>}/>
-      </Routes>
+      <Switch>
+        <Route exact path = '/' component={App}/>
+        <Route path = '/login' component={Login}/>
+      </Switch>
     </div>
   </Router>
 )
