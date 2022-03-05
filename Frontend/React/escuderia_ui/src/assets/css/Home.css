@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #B5B5B5;
+    --cor-tercearia: #25488A;
+}
+
+.home__banner {
+    height: 500px;
+    background-image: linear-gradient(rgba(1, 0, 3, 0.5), rgba(1, 0, 3, 0.5)), url(../img/bannerHome.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Bebas Neue', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home__banner p {
+    /* width: 250px; */
+    font-size: 75px;
+    margin-left: 10vw;
+}
+
+.banner__btn {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(153, 153, 153, 1) 100%);
+    width: 250px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border-style: none;
+    margin-right: 10vw;
+    font-family: 'Michroma', sans-serif;
+    font-size: 20px;
+}
+
+.btn__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner__btn span {
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.btn__img {
+    width: 50px;
+    height: fit-content;
+}
+
+.div__Recomendados {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    background-color: var(--cor-primaria);
+}
+
+.div__Recomendados p {
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.conteudo__section {
+    background: linear-gradient(180deg, rgba(0, 62, 182, 0.55) 0%, rgba(0, 0, 0, 0.942708) 100%);;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.section__anuncios {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.box__anuncio {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: #fff;
+    margin: 10px;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 7px 8px 4px 3px rgba(0, 0, 0, 0.25);
+}
+
+.box__anuncio img {
+    border-radius: 10px 10px 0px 0px;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.box__anuncio span {
+    margin: 5px 0 5px 0;
+}
+
+.titulo__anuncio {
+    display: flex;
+    align-self: center;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.box__anuncio button {
+    height: 30px;
+    text-transform: uppercase;
+    background-color: var(--cor-primaria);
+    border-style: unset;
+    color: white;
+}
+.box__anuncio button:hover {
+    background-color: #252525
+}
