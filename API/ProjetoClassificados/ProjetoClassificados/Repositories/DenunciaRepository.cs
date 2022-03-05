@@ -30,5 +30,17 @@ namespace ProjetoClassificados.Repositories
 
             ctx.SaveChanges();
         }
+
+        public List<Denuncia> Listar()
+        {
+            return ctx.Denuncia
+         .Select(x => new Denuncia
+         {
+             IdDenuncia = x.IdDenuncia,
+             Titulo = x.Titulo, 
+          })
+         .ToList();
+        }
+
     }
 }

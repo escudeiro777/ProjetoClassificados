@@ -6,6 +6,7 @@ using ProjetoClassificados.Interfaces;
 using ProjetoClassificados.Repositories;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,42 +14,30 @@ namespace ProjetoClassificados.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Produces("application/json")]
-    public class AnunciosController : ControllerBase
+    public class ModeloController : ControllerBase
     {
-        private IAnuncioRepository _anuncioRepository { get; set; }
+        private IModeloRepository _modeloRepository { get; set; }
 
-        public AnunciosController()
+        public ModeloController()
         {
-            _anuncioRepository = new AnuncioRepository();
+            _modeloRepository = new ModeloRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost]
-        public IActionResult CadastrarAnuncio(Anuncio novoAnuncio)
+        public IActionResult Post(Modelo novoModelo)
         {
-            try
-            {
-                if (novoAnuncio == null)
-                {
-                    return BadRequest(new
-                    {
-                        mensagem = "Os dados estão inválidos!"
-                    });
-                }
-                _anuncioRepository.CadastrarAnuncio(novoAnuncio);
-                return StatusCode(201);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
+            _modeloRepository.Cadastrar(novoModelo);
+
+            return StatusCode(201);
         }
+
         [HttpGet]
         public IActionResult ListarModelo()
         {
             try
             {
-                List<Anuncio> lista = _anuncioRepository.Listar();
+                List<Modelo> lista = _modeloRepository.Listar();
 
                 return Ok(lista);
             }
@@ -65,7 +54,7 @@ namespace ProjetoClassificados.Controllers
         {
             try
             {
-                _anuncioRepository.Deletar(id);
+                _modeloRepository.Deletar(id);
 
                 return StatusCode(204);
             }
@@ -74,5 +63,6 @@ namespace ProjetoClassificados.Controllers
                 return BadRequest(codErro);
             }
         }
+
     }
 }

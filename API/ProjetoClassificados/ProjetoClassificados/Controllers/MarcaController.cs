@@ -13,42 +13,30 @@ namespace ProjetoClassificados.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Produces("application/json")]
-    public class AnunciosController : ControllerBase
+    public class MarcaController : ControllerBase
     {
-        private IAnuncioRepository _anuncioRepository { get; set; }
+        private IMarcaRepository _marcaRepository { get; set; }
 
-        public AnunciosController()
+        public MarcaController()
         {
-            _anuncioRepository = new AnuncioRepository();
+            _marcaRepository = new MarcaRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost]
-        public IActionResult CadastrarAnuncio(Anuncio novoAnuncio)
+        public IActionResult Post(Marca novaMarca)
         {
-            try
-            {
-                if (novoAnuncio == null)
-                {
-                    return BadRequest(new
-                    {
-                        mensagem = "Os dados estão inválidos!"
-                    });
-                }
-                _anuncioRepository.CadastrarAnuncio(novoAnuncio);
-                return StatusCode(201);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
+            _marcaRepository.Cadastrar(novaMarca);
+
+            return StatusCode(201);
         }
+
         [HttpGet]
         public IActionResult ListarModelo()
         {
             try
             {
-                List<Anuncio> lista = _anuncioRepository.Listar();
+                List<Marca> lista = _marcaRepository.Listar();
 
                 return Ok(lista);
             }
@@ -65,7 +53,7 @@ namespace ProjetoClassificados.Controllers
         {
             try
             {
-                _anuncioRepository.Deletar(id);
+                _marcaRepository.Deletar(id);
 
                 return StatusCode(204);
             }

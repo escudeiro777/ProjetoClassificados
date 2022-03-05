@@ -13,42 +13,30 @@ namespace ProjetoClassificados.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Produces("application/json")]
-    public class AnunciosController : ControllerBase
+    public class DenunciaController : ControllerBase
     {
-        private IAnuncioRepository _anuncioRepository { get; set; }
+        private IDenunciaRepository _denunciaRepository { get; set; }
 
-        public AnunciosController()
+        public DenunciaController()
         {
-            _anuncioRepository = new AnuncioRepository();
+            _denunciaRepository = new DenunciaRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost]
-        public IActionResult CadastrarAnuncio(Anuncio novoAnuncio)
+        public IActionResult Post(Denuncia novaDenuncia)
         {
-            try
-            {
-                if (novoAnuncio == null)
-                {
-                    return BadRequest(new
-                    {
-                        mensagem = "Os dados estão inválidos!"
-                    });
-                }
-                _anuncioRepository.CadastrarAnuncio(novoAnuncio);
-                return StatusCode(201);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
+            _denunciaRepository.Cadastrar(novaDenuncia);
+
+            return StatusCode(201);
         }
+
         [HttpGet]
         public IActionResult ListarModelo()
         {
             try
             {
-                List<Anuncio> lista = _anuncioRepository.Listar();
+                List<Denuncia> lista = _denunciaRepository.Listar();
 
                 return Ok(lista);
             }
@@ -65,7 +53,7 @@ namespace ProjetoClassificados.Controllers
         {
             try
             {
-                _anuncioRepository.Deletar(id);
+                _denunciaRepository.Deletar(id);
 
                 return StatusCode(204);
             }
