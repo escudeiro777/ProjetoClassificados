@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [listaAnuncios, setListaAnuncios] = useState([]);
+  const [listaFotos, setListaFotos] = useState([]);
   // let history = useHistory();
 
   function buscarAnuncios() {
@@ -27,7 +28,25 @@ export default function Home() {
     }).catch(erro => console.log(erro))
   }
 
-  useEffect(buscarAnuncios, []);
+  async function buscarFotos() {
+    await buscarAnuncios();
+    setListaFotos(listaAnuncios.map((a) => {
+      axios('http://localhost:5000/api/FotosProdutos/' + a.idAnuncio, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('usuario-login'),
+      }
+    }).then(response => {
+      console.log(response)
+      if (response.status === 200) {
+        setListaFotos(response.data);
+      }
+    }).catch(erro => console.log(erro))
+    }))
+    
+  }
+
+  //useEffect(buscarAnuncios, []);
+  useEffect(buscarFotos, []);
 
   return (
     <div>
@@ -53,9 +72,16 @@ export default function Home() {
           {
             listaAnuncios !== 0 ?
               listaAnuncios.slice(0, 5).map((anuncio) => {
+                
                 return (
                   <article className='box__anuncio' key={anuncio.idAnuncio}>
-                    <img src={anuncio.fotoProdutos} alt='imagem_do_carro'></img>
+                    {/* <img src="data:image/png;base64, listaFotos[0]" alt="imagem_do_carro" /> */}
+                    {/* <img src={listaFotos[0]} alt='imagem_do_carro'></img> */}
+                    {/* <img src={instanceOfFileReader.readAsText(blob[listaFotos[0], encoding]);} /> */}
+                    
+                    {/* <img src={atob(listaFotos[0])} alt='imagem_do_carro'></img> */}
+                    {console.log(listaFotos[0])}
+                    
                     <span className='titulo__anuncio'>{anuncio.tituloAnuncio}</span>
                     <span className='situacao__anuncio'>Situação: {anuncio.idSituacaoNavigation.tituloSituacao}</span>
                     <span>Ano: {anuncio.anoVeiculo}</span>
