@@ -30,7 +30,9 @@ namespace ProjetoClassificados.Repositories
             Usuario usuario = ctx.Usuarios.FirstOrDefault(u => u.Email == email);
 
 
-            
+            if (usuario != null)
+            {
+
                 if (usuario.Senha == senha)
                 {
 
@@ -47,6 +49,7 @@ namespace ProjetoClassificados.Repositories
                 {
                     return usuario;
                 }
+            }
                         
             return null;
         }

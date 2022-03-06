@@ -25,6 +25,18 @@ header a {
     color: #ffff;
 }
 
+.btn__logout {
+    background-color: transparent;
+    color: #fff;
+    border-style: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn__logout:hover {
+    color: #ff0000;
+}
+
 .header__busca {
     display: flex;
     justify-content: center;

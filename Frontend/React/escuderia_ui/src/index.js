@@ -3,23 +3,25 @@ import ReactDOM from 'react-dom';
 import {
   Route,
   BrowserRouter as Router,
-  Routes,
   Switch
 } from 'react-router-dom';
 
 import './index.css';
 
-import App from '../src/pages/home/App';
+import Home from '../src/pages/home/App';
+
+import Login from './pages/login/login';
+import Anuncio from './pages/anuncio/listagemAnuncio.jsx';
 
 import reportWebVitals from './reportWebVitals';
-import Login from './pages/login/login';
 
 const routing = (
   <Router>
     <div>
       <Switch>
-        <Route exact path = '/' component={App}/>
+        <Route exact path = '/' component={Home}/>
         <Route path = '/login' component={Login}/>
+        <Route path = '/anuncio' component={Anuncio}/>
       </Switch>
     </div>
   </Router>
