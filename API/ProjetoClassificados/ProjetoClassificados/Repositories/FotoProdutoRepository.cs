@@ -14,13 +14,16 @@ namespace ProjetoClassificados.Repositories
     {
         ECS_Context ctx = new ECS_Context();
 
+        private readonly string path = "StaticFiles\\Fotos_Produtos";
         public void AdicionarFotoProduto(int idProduto, IFormFile fotoDoProduto)
         {
             FotoProduto novaImg = new FotoProduto();
 
             using (var ms = new MemoryStream())
             {
-                FotoProduto n_seq = ctx.FotoProdutos.OrderBy(n => n.IdFotoProduto).Last();
+
+                FotoProduto n_seq = ctx.FotoProdutos.OrderBy(n => n.IdFotoProduto).LastOrDefault();
+
                 int indice = n_seq.IdFotoProduto + 1;
 
                 fotoDoProduto.CopyTo(ms);
@@ -47,5 +50,7 @@ namespace ProjetoClassificados.Repositories
 
             return listaFotos;
         }
+
+        
     }
 }

@@ -85,9 +85,9 @@ namespace ProjetoClassificados.Controllers
                     return BadRequest(new { mensagem = "O tamanho maximo de 150KB da imagem foi atingido." });
 
                 string extensao = arquivo.FileName.Split('.').Last();
-
-                if (extensao != "jpg" && extensao != "png")
-                    return BadRequest(new { mensagem = "Apenas arquivos .png e .jpg sao permitidos" });
+                
+                if (extensao != "png")
+                    return BadRequest(new { mensagem = "Apenas arquivos .png sao permitidos" });
 
                 int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 

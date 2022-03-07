@@ -38,6 +38,8 @@ export default function Home() {
     }).then(response => {
       console.log(response)
       if (response.status === 200) {
+        console.log(a);
+        console.log(listaFotos);
         setListaFotos(response.data);
       }
     }).catch(erro => console.log(erro))
@@ -75,12 +77,13 @@ export default function Home() {
                 
                 return (
                   <article className='box__anuncio' key={anuncio.idAnuncio}>
-                    {/* <img src="data:image/png;base64, listaFotos[0]" alt="imagem_do_carro" /> */}
+                    {console.log(listaFotos[0])}
+                    
+                    <img src={`http://localhost:5000/staticfiles/fotos_produtos/` + anuncio.idAnuncio + ".png"} alt="imagem_do_carro" /> 
                     {/* <img src={listaFotos[0]} alt='imagem_do_carro'></img> */}
                     {/* <img src={instanceOfFileReader.readAsText(blob[listaFotos[0], encoding]);} /> */}
                     
                     {/* <img src={atob(listaFotos[0])} alt='imagem_do_carro'></img> */}
-                    {console.log(listaFotos[0])}
                     
                     <span className='titulo__anuncio'>{anuncio.tituloAnuncio}</span>
                     <span className='situacao__anuncio'>Situação: {anuncio.idSituacaoNavigation.tituloSituacao}</span>

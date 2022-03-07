@@ -107,7 +107,7 @@ namespace ProjetoClassificados.Repositories
         {
             Usuario infos = ctx.Usuarios.FirstOrDefault(u => u.IdUsuario == idUsuario);
 
-            string nomeArquivo = infos.IdUsuario.ToString() + "_" + infos.Nome + "." + fotoUsuario.FileName.Split('.').Last();
+            string nomeArquivo = infos.IdUsuario.ToString();
 
             infos.CaminhoImagemUsuario = Directory.GetCurrentDirectory() + "\\" + path + "\\" + nomeArquivo;
 

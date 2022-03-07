@@ -74,5 +74,50 @@ namespace ProjetoClassificados.Controllers
                 return BadRequest(codErro);
             }
         }
+
+        [Authorize]
+        [HttpPost("imagem/{idProduto}")]
+        public IActionResult SalvarImgAnuncio(IFormFile arquivo, int idProduto)
+        {
+            try
+            {
+                if (arquivo.Length > 150000)
+                    return BadRequest(new { mensagem = "O tamanho maximo de 150KB da imagem foi atingido." });
+
+                string extensao = arquivo.FileName.Split('.').Last();
+
+                if (extensao != "png")
+                    return BadRequest(new { mensagem = "Apenas arquivos .png"});
+
+                _anuncioRepository.SalvarFotoAnuncio(arquivo, idProduto);
+
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [Authorize]
+        [HttpGet("imagem/{idAnuncio}")]
+        public IActionResult MostrarImgUsuario(int idAnuncio)
+        {
+            try
+            {
+                
+
+                string base64 = _anuncioRepository.CarregarFotoDiretorio(idAnuncio);
+
+                return Ok(base64);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

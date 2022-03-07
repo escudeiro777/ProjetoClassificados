@@ -1,4 +1,5 @@
-﻿using ProjetoClassificados.Domains;
+﻿using Microsoft.AspNetCore.Http;
+using ProjetoClassificados.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace ProjetoClassificados.Interfaces
         List<Anuncio> Listar();
 
         void CadastrarAnuncio(Anuncio novoAnuncio);
+        string CarregarFotoDiretorio(int idUsuario);
+        void SalvarFotoAnuncio(IFormFile fotoAnuncio, int idAnuncio);
 
     }
 }

@@ -27,6 +27,7 @@ namespace ProjetoClassificados.Domains
         public string Cidade { get; set; }
         public decimal Preco { get; set; }
         public byte Troca { get; set; }
+        public string CaminhoImagemAnuncio { get; set; }
 
         public virtual Cor IdCorNavigation { get; set; }
         public virtual Estado IdEstadoNavigation { get; set; }

@@ -99,6 +99,7 @@ CREATE TABLE anuncio
 	idModelo INT FOREIGN KEY REFERENCES modelo(idModelo) NOT NULL,
 	idCor TINYINT FOREIGN KEY REFERENCES cor(idcor) NOT NULL,
 	idEstado TINYINT FOREIGN KEY REFERENCES estado(idEstado) NOT NULL,
+	caminhoImagemAnuncio VARCHAR(255) NULL,
 	
 	tituloAnuncio VARCHAR(50) NOT NULL,
 	descricao VARCHAR(300) NOT NULL,

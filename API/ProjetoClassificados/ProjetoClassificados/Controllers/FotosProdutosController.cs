@@ -60,7 +60,11 @@ namespace ProjetoClassificados.Controllers
         {
             try
             {
-                return Ok(_fotoProdutoRepository.CarregarFotosProduto(idAnuncio));
+                var foto = _fotoProdutoRepository.CarregarFotosProduto(idAnuncio);
+                return Ok(new
+                {
+                    imagem = foto
+                });
             }
             catch (Exception ex)
             {

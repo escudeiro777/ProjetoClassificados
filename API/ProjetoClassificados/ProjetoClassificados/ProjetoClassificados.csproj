@@ -7,6 +7,8 @@
   <ItemGroup>
 
     <Folder Include="Controllers\" />
+
+    <Folder Include="StaticFiles\Fotos_Produtos\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="StaticFiles\Fotos_Usuarios\" />
-    <Folder Include="StaticFiles\" />
   </ItemGroup>
 
   <ItemGroup>
